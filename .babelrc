@@ -1,0 +1,31 @@
+{
+  "presets": [
+    ["env", {
+      "useBuiltIns": true,
+      "targets": {
+        "browsers": ["last 2 versions", "ie >= 10"]
+      }
+    }],
+    "react"
+  ],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-react-jsx-self",
+    "transform-react-jsx-source"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        ["transform-react-remove-prop-types", {
+          "removeImport": true
+        }],
+        ["transform-imports", {
+          "react": {
+            "transform": "react/${member}",
+            "preventFullImport": true
+          }
+        }]
+      ]
+    }
+  }
+}

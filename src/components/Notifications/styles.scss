@@ -1,0 +1,159 @@
+@import 'definitions';
+
+.error,
+.locked-alert,
+.dismissible-alert {
+  @include general-notification;
+
+  min-width: 40ch;
+  min-height: 10rem;
+}
+
+.error {
+  max-width: 70ch;
+  word-break: break-word;
+
+  font: {
+    weight: 500;
+    size: 1.25rem;
+  }
+}
+
+.error-heading {
+  margin-top: 0;
+
+  color: $color-error;
+  font: {
+    weight: 700;
+    size: 1.2em;
+  }
+}
+
+.retry {
+  @include general-notification;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 30vw;
+  height: 20vh;
+
+  p:last-of-type {
+    margin: 0;
+  }
+}
+
+.locked-alert,
+.dismissible-alert {
+  max-width: 100vw;
+
+  display: flex;
+  align-items: center;
+
+  p {
+    text-align: center;
+
+    font: {
+      weight: 500;
+      size: 1.25rem;
+    }
+  }
+}
+
+.locked-alert {
+  justify-content: center;
+
+  margin-top: 0;
+}
+
+.dismissible-alert {
+  flex-direction: column;
+  justify-content: space-between;
+
+  button {
+    display: block;
+    width: $button-width * 0.6;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@include general-overlay;
+
+.no-overlay {
+  @include no-overlay;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.notification {
+  $height: 10rem;
+
+  position: absolute;
+  bottom: -$height;
+
+  width: 100%;
+  height: $height;
+  padding: 4rem 2rem;
+  text-align: center;
+
+  background-color: $color-text-black;
+  color: $color-text-white;
+
+  font: {
+    family: $typeface-head;
+    size: 2rem;
+  }
+
+  opacity: 0;
+
+  transition: transform 1s cubic-bezier(0.49, 0.21, 0.07, 0.94), opacity 0.9s;
+
+  &.is-visible {
+    transform: translateY(-$height);
+    opacity: 1;
+  }
+}
+
+.pool-information,
+.no-metamask {
+  a {
+    color: darken($color-highlight, 15%);
+  }
+}
+
+.pool-information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-bottom: 2rem;
+
+  strong {
+    display: inline-block;
+    width: 6ch;
+    text-align: left;
+
+    color: $color-text-lightest;
+  }
+}
+
+.no-metamask {
+  @include general-notification;
+
+  max-width: 45vw;
+  min-height: 10rem;
+
+  justify-content: center;
+
+  p {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,92 @@
+@import 'definitions';
+
+
+.container {
+  text-align: center;
+
+  > p {
+    padding: 6rem 0 4rem;
+  }
+}
+
+.actions-container {
+  padding-top: 6rem;
+
+  input[type='text'] {
+    @include text-field('dark');
+
+    margin-bottom: $button-top-margin;
+  }
+}
+
+.actions-container-admin {
+  @include actions-grid(2);
+
+  > div {
+    @include action-grid-dividers(2, $color-pale-line-white);
+  }
+}
+
+.actions-container-user {
+  @include actions-grid(3);
+
+  > div {
+    @include action-grid-dividers(3, $color-pale-line-white);
+  }
+}
+
+.reimbursements {
+  display: inline-block;
+  width: $card-width;
+
+  padding: 2rem;
+
+  border: 1px solid currentColor;
+  border-radius: $border-radius;
+
+  h3 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  span {
+    cursor: pointer;
+  }
+}
+
+.reimbursement-values {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 2rem;
+
+  figure {
+    flex: 0 0 50%;
+
+    margin: 0.5rem 0 0;
+
+    text-align: center;
+
+    &:nth-of-type(2) {
+      @include container-line-divider('vertical', $color-pale-line-white);
+
+      order: -1;
+    }
+  }
+
+  figcaption {
+    margin-top: 0.25rem;
+
+    font: {
+      family: $typeface-head;
+      weight: 500;
+    }
+  }
+
+  span {
+    font: {
+      weight: 800;
+      size: 2rem;
+    }
+  }
+}

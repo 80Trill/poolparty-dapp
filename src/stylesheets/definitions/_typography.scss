@@ -1,0 +1,43 @@
+@import 'colors';
+@import '../utilities';
+
+$typeface-text: 'Avenir LT Std';
+$typeface-head: 'Montserrat';
+
+// improve legibility by adding a faint shadow to the text
+@mixin legibility-shadow {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  &::selection {
+    text-shadow: none;
+  }
+}
+
+@mixin display-current-value {
+  color: $color-highlight;
+
+  font: {
+    family: $typeface-text;
+    weight: 800;
+    size: 2rem;
+  }
+}
+
+@mixin placeholder-label-text {
+  font: {
+    family: $typeface-text;
+    weight: 300;
+    size: inherit;
+  }
+}
+
+@mixin section-heading {
+  @include text-clear-default-margins;
+
+  text-align: center;
+  font: {
+    family: $typeface-head;
+    weight: 600;
+    size: 2rem;
+  }
+}

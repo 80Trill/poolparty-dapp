@@ -1,0 +1,68 @@
+@mixin actions-grid($columns: 3) {
+  text-align: center;
+
+  padding: 4rem 0 1rem;
+
+  @if $columns == 3 {
+    display: grid;
+    grid-column-gap: 4rem;
+    grid-row-gap: 1rem;
+    align-items: end;
+
+    grid-template-columns: repeat(1, 1fr);
+
+    @include viewport-small {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include viewport-large {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @if $columns == 2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 0 0 32%;
+  }
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    position: relative;
+
+    height: 100%;
+    min-height: 200px;
+
+    @if $columns == 2 {
+      width: 400px;
+
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+
+    > div {
+      width: 100%;
+    }
+  }
+}
+
+@mixin action-grid-dividers($columns, $color) {
+  @if $columns == 2 {
+    &:not(:last-of-type) {
+      @include container-line-divider('vertical', $color, 0, 60%);
+    }
+  }
+
+  @if $columns == 3 {
+    &:not(:last-of-type) {
+      @include container-line-divider('vertical', $color, -2rem, 60%);
+    }
+  }
+}

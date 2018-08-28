@@ -1,0 +1,21 @@
+<svg viewBox="0 0 1000 500" width="1000" height="500" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+        <linearGradient id="BackgroundGradient">
+            <stop offset="0%" stop-color="#00a3dc" />
+            <stop offset="45%" stop-color="#00c2e9" stop-opacity="1" />
+            <stop offset="55%" stop-color="#00c2e9" stop-opacity="1" />
+            <stop offset="100%" stop-color="#00a3dc" />
+        </linearGradient>
+    </defs>
+
+    <!--<rect x="0" y="0" width="1000" height="500" style="fill: url(#BackgroundGradient)" />-->
+    <rect x="0" y="0" width="1000" height="500" fill="none" />
+
+    <g>
+        <circle cx="100" cy="60" r="200" fill="rgba(255, 255, 255, 0.1)" />
+
+        <circle cx="970" cy="60" r="70" fill="rgba(255, 255, 255, 0.1)" />
+
+        <path d="M 0,400 Q 150,300 300,400 T 600,400 T 1000,400 V 500 H0 Z" fill="rgba(255, 255, 255, 0.1)" />
+    </g>
+</svg>

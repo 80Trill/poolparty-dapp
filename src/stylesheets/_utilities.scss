@@ -1,0 +1,50 @@
+@mixin list-clear-defaults {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+@mixin text-clear-default-margins {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@mixin button-clear-default-styling {
+  text-align: inherit;
+  border: none;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+
+  font: {
+    family: inherit;
+    weight: inherit;
+    size: inherit;
+  }
+}
+
+@mixin center-via-margins {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin center-flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin smooth-light-on-dark-text {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

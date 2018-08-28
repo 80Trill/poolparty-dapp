@@ -1,0 +1,74 @@
+@import 'definitions';
+@import 'utilities';
+
+
+.container {
+  @include center-via-margins;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  max-width: $max-content-width;
+  height: $header-height;
+
+  figcaption {
+    font: {
+      family: $typeface-head;
+      weight: 700;
+      size: 0.8rem;
+    }
+  }
+}
+
+.logo {
+  @include center-flex-container;
+
+  > img, svg {
+    height: 55px;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.pool-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  figure {
+    display: flex;
+
+    height: 1.5rem;
+    margin: 0;
+  }
+
+  figcaption,
+  span {
+    height: inherit;
+  }
+
+  span {
+    color: $color-text-highlight;
+  }
+
+  figcaption {
+    flex: 0 0 5.3rem;
+  }
+}
+
+.user-balance {
+  @include center-flex-container;
+
+  figure {
+    margin: 0 0 0 auto;
+
+    text-align: center;
+  }
+
+  figcaption {
+    margin-bottom: 0.25rem;
+  }
+
+  span {
+    @include display-current-value;
+  }
+}

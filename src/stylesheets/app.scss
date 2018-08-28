@@ -1,0 +1,38 @@
+@import 'global-resets';
+@import 'definitions/colors';
+@import 'definitions/fonts';
+
+
+body {
+  font-family: 'Avenir LT Std', sans-serif;
+  background-color: $color-background;
+  color: $color-text-black;
+}
+
+:global(.ReactModal__Body--open) {
+  overflow: hidden;
+}
+
+:global(.fadeComponent-enter) {
+  opacity: 0;
+}
+
+:global(.fadeComponent-enter.fadeComponent-enter-active) {
+  opacity: 1;
+
+  transition-delay: 1s;
+  transition: opacity 1.2s ease-out;
+}
+
+:global(.fadeComponent-exit) {
+  opacity: 1;
+  max-height: 0;
+}
+
+:global(.fadeComponent-exit-active) {
+  padding: 0 !important;
+}
+
+:global(.fadeComponent-exit.fadeComponent-exit-active) {
+  opacity: 0;
+}

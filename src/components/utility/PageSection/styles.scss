@@ -1,0 +1,30 @@
+@import 'definitions';
+@import 'utilities';
+
+$background-pattern: url('../../../../assets/backgroundPattern.svg');
+
+.active-container {
+  padding-top: 2rem;
+}
+
+.styled-container {
+  background-color: $color-blue-background;
+  background-image: $background-pattern;
+  background-size: cover;
+
+  color: $color-text-white;
+}
+
+.styled-gradient-container {
+  @extend .styled-container;
+
+  background-image: $background-gradient, $background-pattern;
+}
+
+.content {
+  @include center-via-margins;
+
+  max-width: $max-content-width;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

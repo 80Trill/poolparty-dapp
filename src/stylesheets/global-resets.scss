@@ -1,0 +1,41 @@
+@import 'definitions/colors';
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+button,
+select {
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+:focus {
+  outline-color: $color-text-black;
+}
+
+:disabled {
+  opacity: 0.8;
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+:global(.invalid) {
+  color: #ff4324 !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+:global(.js-focus-visible :focus:not(.focus-visible)) {
+  outline: none;
+}

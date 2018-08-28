@@ -1,0 +1,18 @@
+@import 'definitions';
+
+
+.actions-container {
+  @include actions-grid(2);
+
+  padding: 0 0 2rem;
+
+  input[type='text'] {
+    @include text-field('light');
+
+    margin-bottom: $button-top-margin;
+  }
+
+  > div {
+    @include action-grid-dividers(2, $color-pale-line-black);
+  }
+}

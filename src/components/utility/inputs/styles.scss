@@ -1,0 +1,78 @@
+@import 'definitions';
+
+
+.number-container {
+  position: relative;
+  height: $input-height;
+  margin-bottom: $button-top-margin;
+
+  input[type='number'] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &:focus + .spin-buttons {
+      opacity: 0;
+    }
+  }
+}
+
+.spin-buttons {
+  pointer-events: none;
+
+  position: absolute;
+  top: 0;
+  right: $input-padding-left / 1.5;
+
+  height: $input-height;
+  padding: 0.75em 0;
+
+  opacity: 0.85;
+
+  transition: opacity 0.15s;
+}
+
+.select-container {
+  position: relative;
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+
+.select-dropdown-button {
+  pointer-events: none;
+
+  position: absolute;
+  top: 0;
+  right: $input-padding-left / 1.5;
+
+  height: $input-height;
+  opacity: 0.85;
+}
+
+.min-max {
+  position: relative;
+  padding-top: 1rem;
+}
+
+.invalid-message {
+  position: absolute;
+  right: 0;
+  margin-top: -1rem;
+
+  white-space: nowrap;
+  font-size: 0.75rem;
+  color: $color-text-black;
+}
+
+.toggle-container {
+  @include toggle;
+
+  text-align: right;
+}

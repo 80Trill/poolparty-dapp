@@ -1,0 +1,36 @@
+@import 'colors';
+@import 'measures';
+@import 'typography';
+@import '../utilities';
+
+
+@mixin button($color, $height: $input-height) {
+  @include smooth-light-on-dark-text;
+
+  border: none;
+  border-radius: $border-radius;
+  height: $height;
+
+
+  padding: 1em;
+
+  background-color: $color;
+  color: $color-text-white;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+
+  font: {
+    family: $typeface-head;
+    weight: 700;
+    size: inherit;
+  }
+
+  transition: background-color 0.15s;
+
+  &:hover:not(:disabled) {
+    background-color: lighten($color, 10%);
+  }
+}

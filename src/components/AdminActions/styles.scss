@@ -1,0 +1,224 @@
+@import 'definitions';
+@import 'utilities';
+
+
+.actions-container {
+  input[type='text'],
+  input[type='number'] {
+    margin-bottom: $button-top-margin;
+  }
+
+  label {
+    + button {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.active-actions-container {
+  @include actions-grid(3);
+
+  input[type='text'],
+  input[type='number'] {
+    @include text-field('dark');
+  }
+
+  label {
+    @include checkbox-label('dark');
+  }
+
+  > div {
+    &:nth-of-type(1),
+    &:nth-of-type(2),
+    &:nth-of-type(4),
+    &:nth-of-type(5) {
+      @include container-line-divider('vertical', $color-pale-line-white, -2rem);
+    }
+
+    &:nth-of-type(1),
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      @include container-line-divider('horizontal', $color-pale-line-white, -0.5rem);
+    }
+
+    @include viewport-small {
+      &:nth-of-type(3) {
+        @include container-line-divider('vertical', $color-pale-line-white, -2rem);
+      }
+
+      &:nth-of-type(4) {
+        @include container-line-divider('horizontal', $color-pale-line-white, -0.5rem);
+      }
+    }
+
+    @include viewport-large {
+      &:nth-of-type(4) {
+        @include container-line-divider('vertical', $color-pale-line-white, -2rem);
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &:nth-of-type(3)::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.completed-actions-container {
+  @include actions-grid(3);
+
+  padding-top: 0;
+  padding-bottom: 3rem;
+
+  input[type='text'],
+  input[type='number'] {
+    @include text-field('light');
+  }
+
+  > div {
+    @include action-grid-dividers(3, $color-pale-line-black);
+
+    text-align: center;
+  }
+}
+
+.awaiting-actions-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+
+  padding: 4rem 0;
+
+  input[type='text'],
+  input[type='number'] {
+    @include text-field('light');
+  }
+
+  > div {
+    flex: 0 0 50%;
+
+    text-align: center;
+    padding: 0 5rem;
+
+    &:first-of-type {
+      @include container-line-divider('vertical', $color-pale-line-black);
+    }
+
+    > div {
+      margin: 0 auto;
+    }
+  }
+}
+
+.cancelled-container {
+  text-align: center;
+  padding: 4rem 0;
+
+  button {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.text-with-button {
+  text-align: center;
+
+  p {
+    @include placeholder-label-text;
+
+    line-height: 1.4;
+  }
+}
+
+.warn-text {
+  display: block;
+  width: 85%;
+  margin: 0 auto 0.25em;
+}
+
+.whitelist {
+  @include general-notification;
+
+  width: 60vw;
+
+  input {
+    @include text-field('light');
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+@include general-overlay;
+
+.add-whitelist-address {
+  display: flex;
+  margin-bottom: $button-top-margin;
+
+  button {
+    flex: 0 1 20%;
+
+    margin-top: 0;
+    margin-left: 0.8rem;
+  }
+}
+
+.whitelist-addresses {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+
+  min-height: 10vh;
+
+  border: 1px solid $color-pale-line-black;
+  border-radius: $border-radius;
+
+  li {
+    position: relative;
+
+    padding: 0.5rem 0.75rem;
+
+    transition: background-color 0.15s;
+
+    &:first-child {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+
+    &:not(:nth-child(-n+2)) + &:last-child {
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+
+    span:last-of-type {
+      padding: inherit;
+      cursor: pointer;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      font-style: italic;
+
+      opacity: 0;
+    }
+
+    &:hover {
+      background-color: $color-field-background-dark;
+
+      span:last-of-type {
+        opacity: 0.75;
+
+        transition: opacity 0.15s;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

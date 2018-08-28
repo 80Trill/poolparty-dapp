@@ -1,0 +1,55 @@
+@import 'colors';
+@import 'measures';
+
+@mixin general-notification {
+  position: relative;
+  background: $color-text-white;
+  border-radius: $border-radius;
+  outline: none;
+
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 2rem;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+// don't use within selector
+@mixin general-overlay {
+  .overlay {
+    z-index: 5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  :global(div[class*='overlay'].ReactModal__Overlay) {
+    background-color: rgba(0, 0, 0, 0.3);
+
+    opacity: 0;
+
+    transition: opacity 0.3s;
+
+    &--after-open {
+      opacity: 1;
+    }
+
+    &--before-close {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin no-overlay {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

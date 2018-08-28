@@ -1,0 +1,54 @@
+@import 'definitions';
+
+.container {
+  padding: 6rem 0 4rem;
+  text-align: center;
+
+  button {
+    width: $input-width;
+  }
+
+  input[type='text'],
+  input[type='number'] {
+    margin-bottom: 1.25rem;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+}
+
+%actions-container {
+  input[type='text'],
+  input[type='number'] {
+    @include text-field('dark');
+  }
+}
+
+.actions-container-refund {
+  @include actions-grid(3);
+  @extend %actions-container;
+
+  > div {
+    @include action-grid-dividers(3, $color-pale-line-white);
+  }
+}
+
+.actions-container {
+  @include actions-grid(2);
+  @extend %actions-container;
+
+  > div {
+    @include action-grid-dividers(2, $color-pale-line-white);
+  }
+}
+
+.actions-container-completed {
+  padding: 2rem 0;
+  text-align: center;
+
+  button {
+    width: $input-width;
+  }
+}

@@ -1,0 +1,38 @@
+@import 'definitions';
+
+
+.submit-button-primary {
+  @include button($color-accent);
+}
+
+.submit-button-secondary {
+  @include button($color-highlight);
+}
+
+.submit-cancel-buttons {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 1.5rem;
+
+  > button {
+    width: auto;
+    margin: 0 0.4rem;
+
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+.logo {
+  color: $color-highlight;
+
+  path,
+  text:first-of-type {
+    fill: currentColor;
+  }
+
+  text:last-of-type {
+    fill: $color-text-black;
+  }
+}

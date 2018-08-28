@@ -1,0 +1,56 @@
+@import 'colors';
+
+
+@mixin container-line-divider-common-values($color) {
+  display: block;
+  position: absolute;
+  content: '';
+
+  background-color: $color;
+}
+
+@mixin container-line-divider($direction, $color: currentColor, $adjust: 0, $length: 80%) {
+  position: relative;
+
+  @if $direction == 'horizontal' {
+
+    &::before {
+      @include container-line-divider-common-values($color);
+      width: $length;
+      height: 1px;
+
+      bottom: $adjust;
+    }
+
+  } @else if $direction == 'vertical' {
+    &::after {
+      @include container-line-divider-common-values($color);
+      width: 1px;
+      height: $length;
+
+      top: 50%;
+      transform: translateY(-50%);
+
+      right: $adjust;
+    }
+  }
+}
+
+@mixin dash-under-heading($color) {
+  &::after {
+    display: block;
+    content: '';
+    width: 2.5rem;
+    height: 3px;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $color;
+  }
+}
+
+@mixin gradient-box {
+  padding: 2rem 1.5rem;
+  border-radius: 3px;
+  box-shadow: 0 4px 20px 0 transparentize($color-blue-background, 0.8);
+}

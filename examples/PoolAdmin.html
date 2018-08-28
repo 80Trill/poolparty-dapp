@@ -1,0 +1,843 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.3/milligram.min.css">
+</head>
+<body class="container" style="padding-top: 3%;">
+<h4>PoolParty!</h4>
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Current User<label>
+            <blockquote><p><em id="accountAddress">Loading..</em></p></blockquote>
+    </div>
+    <div class="column">
+        <label>Current Pool<label>
+            <blockquote><p><em id="currentPool">Not set...</em></p></blockquote>
+    </div>
+</div>
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Set Current Pool</label>
+        <input type="text" id="setPoolValue" placeholder="0xcc13...91f8" />
+    </div>
+    <div class="column">
+        <br />
+        <button id="setCurrentPoolButton">Set</button>
+    </div>
+</div>
+
+
+<hr />
+<hr />
+<h2>New Functions and Fields!</h2>
+
+
+<div class="row">
+    <div class="column">
+        <label>Current Project Refund Total<label>
+            <blockquote><p><em id="currentTotalRefund">Not set..</em></p></blockquote>
+    </div>
+
+    <div class="column">
+        <label>Current Refund Available<label>
+            <blockquote><p><em id="currentTotalRefundUser">Not set...</em></p></blockquote>
+    </div>
+</div>
+<hr />
+<div class="row">
+<div class="column">
+    <button id="claimReimbursementsAllButton">Claim Everyones Reimbursement</button>
+</div>
+
+<div class="column">
+    <button id="claimUserReimbursement">Claim Current Users Reimbursement</button>
+</div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <label>Process this users reimbursement</label>
+        <input type="number" id="reimbursementAddress" placeholder="0x0" />
+    </div>
+    <div class="column">
+        <br />
+        <button id="processReimbursement">Send</button>
+    </div>
+</div>
+
+
+<hr />
+
+
+<div class="column">
+    <label>Claim Refund for Subset</label>
+    <input type="number" id="firstIndexReimbursement" placeholder="first Index" />
+    <input type="number" id="numberOfAddressReimbursement" placeholder="number Of addresses" />
+</div>
+<div class="column">
+    <br />
+    <button id="claimRefundSubset">Claim</button>
+</div>
+
+
+
+<hr />
+
+
+<div class="column">
+    <label>Claim Reimbursement for Subset</label>
+    <input type="number" id="firstIndexReimbursement" placeholder="first Index" />
+    <input type="number" id="numberOfAddressReimbursement" placeholder="number Of addresses" />
+</div>
+<div class="column">
+    <br />
+    <button id="claimReimbursementSubset">Claim</button>
+</div>
+
+
+<hr />
+
+
+<div class="column">
+    <label>Claim Tokens for Subset</label>
+    <input type="number" id="firstIndexReimbursement" placeholder="first Index" />
+    <input type="number" id="numberOfAddressReimbursement" placeholder="number Of addresses" />
+</div>
+<div class="column">
+    <br />
+    <button id="claimTokenSubset">Claim</button>
+</div>
+
+
+
+<hr />
+<hr />
+<h2>End of New Functions and Fields!</h2>
+<hr />
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Current User Balance<label>
+            <blockquote><p><em id="currentUserBalance">Not set..</em></p></blockquote>
+    </div>
+
+    <div class="column">
+        <label>Current Eth Raised<label>
+            <blockquote><p><em id="currentEthRaised">Not set...</em></p></blockquote>
+    </div>
+
+    <div class="column">
+        <label>Current % Cap Raised<label>
+            <blockquote><p><em id="currentPercentRaised">Not set..</em></p></blockquote>
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="column">
+        <label>Min Contribution<label>
+            <blockquote><p><em id="currentMinContribution">Not set...</em></p></blockquote>
+    </div>
+
+    <div class="column">
+        <label>Max Contribution<label>
+            <blockquote><p><em id="currentMaxContribution">Not set...</em></p></blockquote>
+    </div>
+
+    <div class="column">
+        <label>Max Allocation<label>
+            <blockquote><p><em id="currentMaxAllocation">Not set...</em></p></blockquote>
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="column">
+        <label>Admin Fee Percentage<label>
+            <blockquote><p><em id="currentAdminFeePercentage">Not set...</em></p></blockquote>
+    </div>
+
+    <div class="column">
+        <label>Admin Fee Payout<label>
+            <blockquote><p><em id="currentAdminFeePayout">Not set...</em></p></blockquote>
+    </div>
+
+    <div class="column">
+        <label>Pool State<label>
+            <blockquote><p><em id="currentPoolState">Not set...</em></p></blockquote>
+    </div>
+
+</div>
+
+
+<hr />
+
+
+</div>
+
+<div class="row">
+
+    <div class="column">
+        <label>Current Token Balances<label>
+            <blockquote><p><em id="currentTokenBalance">Not set...</em></p></blockquote>
+    </div>
+
+    <div class="column">
+        <label>Token Names<label>
+            <blockquote><p><em id="currentTokenName">Not set...</em></p></blockquote>
+    </div>
+
+    <div class="column">
+        <label>Current Token Addresses<label>
+            <blockquote><p><em id="currentTokenAddress">Not set...</em></p></blockquote>
+    </div>
+
+</div>
+
+<hr />
+
+
+</div>
+
+<div class="row">
+
+    <div class="column">
+        <label>TotalTokensDistributed<label>
+            <blockquote><p><em id="totalTokensDistributed">Not set...</em></p></blockquote>
+    </div>
+
+    <div class="column">
+        <label>Tokens Claimed So Far<label>
+            <blockquote><p><em id="totalTokensUserHasClaimed">Not set...</em></p></blockquote>
+    </div>
+
+    <div class="column">
+        <label>Tokens Available for Withdraw<label>
+            <blockquote><p><em id="totalTokensUserCanClaim">Not set...</em></p></blockquote>
+    </div>
+
+</div>
+
+
+<div id="testResponse" style="padding: 20px; display: none; border: 1px solid #9b4dca">
+</div>
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <button id="closePoolButton">Close Pool</button>
+    </div>
+
+    <div class="column">
+        <button id="openPoolButton">Open Pool</button>
+    </div>
+
+
+    <div class="column">
+        <button id="cancelPoolButton">Cancel Pool</button>
+    </div>
+
+    <div class="column">
+        <button id="currentStateButton">Current State</button>
+    </div>
+
+    <div class="column">
+        <button id="nextPoolIdButton">Next Pool ID</button>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="column">
+        <button id="claimTokensAddressAllButton">Claim Everyones Tokens</button>
+    </div>
+
+    <div class="column">
+        <button id="claimTokensCurrentUserButton">Claim Current User Tokens</button>
+    </div>
+
+    <div class="column">
+        <button id="refundCurrentUserButton">Refund Current User</button>
+    </div>
+
+    <div class="column">
+        <button id="refundAllUsersButton">Refund All Users</button>
+    </div>
+</div>
+
+
+<hr />
+
+
+
+<div class="row">
+    <div class="column">
+        <label>Get Pool Address</label>
+        <input type="number" id="getPoolAddress" placeholder="0..." />
+    </div>
+    <div class="column">
+        <br />
+        <button id="getPoolAddressButton">Get</button>
+    </div>
+</div>
+
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Send Ether To Pool</label>
+        <input type="number" id="sendEtherValue" placeholder="0..." />
+    </div>
+    <div class="column">
+        <br />
+        <button id="sendEtherValueButton">Send</button>
+    </div>
+</div>
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Claim Tokens By Address</label>
+        <input type="text" id="claimTokensAddress" placeholder="0xcc13...91f8" />
+    </div>
+    <div class="column">
+        <br />
+        <button id="claimTokensAddressButton">Claim Tokens</button>
+    </div>
+    <div id="claimTokensAddressResponse" style="padding: 20px; display: none; border: 1px solid #9b4dca">
+    </div>
+</div>
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Add a Token Address</label>
+        <input type="text" id="addToken" placeholder="0xcc13...91f8" />
+    </div>
+    <div class="column">
+        <br />
+        <button id="addTokenButton">Add</button>
+    </div>
+</div>
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Remove a Token Address</label>
+        <input type="text" id="removeToken" placeholder="0xcc13...91f8" />
+    </div>
+    <div class="column">
+        <br />
+        <button id="removeTokenButton">Remove</button>
+    </div>
+</div>
+
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Add Addresses to the Whitelist</label>
+        <input type="text" id="addAddressToWhiteList" placeholder="List of hex addresses, eg. =>  0x0000...0001, 0x0000...0002, 0x0000...0003" />
+    </div>
+    <div class="column">
+        <br />
+        <button id="addAddressToWhitelistButton">Add</button>
+    </div>
+</div>
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Refund Address and Remove from Whitelist</label>
+        <input type="text" id="refundAddressRemove" placeholder="0xcc13...91f8" />
+    </div>
+    <div class="column">
+        <br />
+        <button id="refundAddressRemoveButton">Refund and Remove</button>
+    </div>
+</div>
+
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Project Refund</label>
+        <input type="number" id="projectRefund" placeholder="0..." />
+    </div>
+    <div class="column">
+        <br />
+        <button id="projectRefundButton">Transfer</button>
+    </div>
+</div>
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Transfer Ether</label>
+        <input type="text" id="transferWei" placeholder="0xcc13...91f8" />
+    </div>
+    <div class="column">
+        <br />
+        <button id="transferWeiButton">Transfer</button>
+    </div>
+</div>
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Refund Address</label>
+        <input type="text" id="refundAddress" placeholder="0xcc13...91f8" />
+    </div>
+    <div class="column">
+        <br />
+        <button id="refundAddressButton">Refund</button>
+    </div>
+</div>
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Set Min and Max Contribution</label>
+        <input type="number" id="setMinContribution" placeholder="min" />
+        <input type="number" id="setMaxContribution" placeholder="max" />
+    </div>
+    <div class="column">
+        <br />
+        <button id="setMinAndMaxContributionButton">Set</button>
+    </div>
+</div>
+
+
+<hr />
+
+
+<div class="row">
+    <div class="column">
+        <label>Set Pool Max Allocation</label>
+        <input type="number" id="setMaxAllocation" placeholder="4700" />
+    </div>
+    <div class="column">
+        <br />
+        <button id="setMaxAllocationButton">Set</button>
+    </div>
+</div>
+
+
+<hr />
+
+
+<div class="column">
+    <label>Create New Pool</label>
+    <input type="text" id="arrayOfAdmin" placeholder="List of admin hex addresses, eg. =>  0x0000...0001, 0x0000...0002, 0x0000...0003" />
+</div>
+<div class="row">
+    <div class="column">
+        <input type="number" id="maxAllocation" placeholder="Max allocation" />
+    </div>
+    <div class="column">
+        <input type="number" id="minContribution" placeholder="Minimum contribution" />
+    </div>
+    <div class="column">
+        <input type="number" id="maxContribution" placeholder="Max contribution" />
+    </div>
+    <div class="column">
+        <input type="number" id="adminFeePercentageDecimal" placeholder="Number of devimals in the admin fee percentage" />
+    </div>
+    <div class="column">
+        <input type="number" id="adminFeePercentage" placeholder="Admin fee percentage relative to decimals" />
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <input type="text" id="hasWhitelist" placeholder="WhiteList Enabled => true, or WhiteList Disabled => false" />
+    </div>
+    <div class="column">
+        <input type="text" id="adminFeeIsToken" placeholder="Admin Fee is: Tokens => true, Ether => false" />
+    </div>
+</div>
+<div class="column">
+    <br />
+    <button id="createPoolButton">Create Pool</button>
+</div>
+<div id="createPoolResponse" style="padding: 20px; display: none; border: 1px solid #9b4dca">
+</div>
+
+
+<hr />
+
+
+
+<script type="text/javascript" src="../lib/PoolParty.js"></script>
+<script type="text/javascript">
+
+    var web3 = window.web3;
+    var el = function(id){ return document.querySelector(id); };
+
+    if (typeof window.web3 !== 'undefined' && typeof window.web3.currentProvider !== 'undefined') {
+        console.log("Using web3 detected from external source like Metamask");
+        web3 = new Web3(web3.currentProvider);
+    } else {
+        console.log("Using localhost");
+        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    }
+
+    // Method being sent to library that is called once values have been updated
+    function updateGlobals(pool){
+        el('#currentUserBalance').innerHTML = pool.userBalance;
+        el('#currentEthRaised').innerHTML = pool.ethRaised;
+        el('#currentPercentRaised').innerHTML = pool.percentageOfCapRaised;
+        el('#currentMinContribution').innerHTML = pool.minContribution;
+        el('#currentMaxContribution').innerHTML = pool.maxContribution;
+        el('#currentMaxAllocation').innerHTML = pool.maxAllocation;
+        el('#currentAdminFeePercentage').innerHTML = pool.adminFeePercentage;
+        el('#currentAdminFeePayout').innerHTML = pool.adminFeePayoutIsToken;
+        el('#currentPoolState').innerHTML = pool.poolState;
+        el('#currentTokenAddress').innerHTML = pool.tokenAddress;
+        el('#currentTokenBalance').innerHTML = Object.values(pool.tokenBalance);
+        el('#currentTokenName').innerHTML = Object.values(pool.tokenName);
+        el('#totalTokensDistributed').innerHTML = Object.values(pool.totalTokensDistributed);
+        el('#totalTokensUserHasClaimed').innerHTML = Object.values(pool.totalTokensUserHasClaimed);
+        el('#totalTokensUserCanClaim').innerHTML = Object.values(pool.totalTokensUserCanClaim);
+    }
+
+    function updateTransactionStatus (isSuccessful, message, hash){
+        console.log(isSuccessful + " " + message + " " + hash);
+    }
+
+    web3.eth.getAccounts(function(err, res){
+        if(!err){
+
+            var pool = new Pool(web3, res, updateGlobals, updateTransactionStatus);
+
+            el('#accountAddress').innerHTML = res[0];
+            el('#testResponse').style.display = 'block';
+
+
+            el('#closePoolButton').addEventListener('click', function(){
+                pool.setPoolToClosed(function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#openPoolButton').addEventListener('click', function(){
+                pool.setPoolToOpen(function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#cancelPoolButton').addEventListener('click', function(){
+                pool.setPoolToCancelled(function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#currentStateButton').addEventListener('click', function(){
+                pool.poolState(function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#nextPoolIdButton').addEventListener('click', function(){
+                pool.nextPoolId(function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#getPoolAddressButton').addEventListener('click', function(){
+                pool.getPoolAddress(el('#getPoolAddress').value, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#setCurrentPoolButton').addEventListener('click', function(){
+                pool.setCurrentPool(el('#setPoolValue').value);
+                el('#currentPool').innerHTML = pool.poolInstance.address;
+            });
+
+            // When users want to credit someone else for the deposit, ie, depositing on behalf of someone else. Specify the second parameter of pool.sendEther(..., address, ...).
+            el('#sendEtherValueButton').addEventListener('click', function(){
+                pool.sendEther(el('#sendEtherValue').value, pool.userAccount,  function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#refundCurrentUserButton').addEventListener('click', function(){
+                pool.refundEther(function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#claimTokensAddressButton').addEventListener('click', function(){
+                pool.claimAddress(el('#claimTokensAddress').value, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#claimTokensCurrentUserButton').addEventListener('click', function(){
+                pool.claimAddress(pool.userAccount, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#claimTokensAddressAllButton').addEventListener('click', function(){
+                pool.claimAllAddresses(function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#addTokenButton').addEventListener('click', function(){
+                pool.addToken(el('#addToken').value, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#removeTokenButton').addEventListener('click', function(){
+                pool.removeToken(el('#removeToken').value, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#addAddressToWhitelistButton').addEventListener('click', function(){
+                let array = el('#addAddressToWhitelist').value.split(",");
+
+                for (let i = 0; i < array.length ; i++){
+                    array[i] = array[i].trim();
+                }
+
+                pool.addAddressesToWhitelist(array, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#refundAddressRemoveButton').addEventListener('click', function(){
+                pool.removeAddressFromWhitelistAndRefund(el('#refundAddressRemove').value, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#refundAddressButton').addEventListener('click', function(){
+                pool.refundAddress(el('#refundAddress').value, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#refundAllUsersButton').addEventListener('click', function(){
+                pool.refundAll(function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#projectRefundButton').addEventListener('click', function(){
+                pool.projectRefund(el('#projectRefund').value, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#transferWeiButton').addEventListener('click', function(){
+                pool.transferWei(el('#transferWei').value, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#setMinAndMaxContributionButton').addEventListener('click', function(){
+                pool.setMinMaxContribution(el('#setMinContribution').value, el('#setMaxContribution').value, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#setMaxAllocationButton').addEventListener('click', function(){
+                pool.setMaxAllocation(el('#setMaxAllocation').value, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+            el('#createPoolButton').addEventListener('click', function(){
+                let configsArray = [el('#maxAllocation').value, el('#minContribution').value, el('#maxContribution').value, el('#adminFeePercentageDecimal').value, el('#adminFeePercentage').value];
+                let boolArray = [(el('#hasWhitelist').value.toLowerCase() === "true"), (el('#adminFeeIsToken').value.toLowerCase() === "true")];
+                let adminsArray = el('#arrayOfAdmin').value.split(",");
+
+                for (let i = 0; i < adminsArray.length ; i++){
+                    adminsArray[i] = adminsArray[i].trim();
+                }
+
+                pool.createPool(adminsArray, configsArray, boolArray, function(error, result){
+                    if(!error){
+                        el('#testResponse').innerHTML = 'This was the success: ' + result;
+                    }
+                    else{
+                        el('#testResponse').innerHTML = 'This was the error: ' + error;
+                    }
+                });
+            });
+
+
+
+
+
+
+
+        }
+
+
+        else {
+            console.log(err)
+        }
+    });
+
+</script>
+
+<br /><br />
+
+</body>
+</html>

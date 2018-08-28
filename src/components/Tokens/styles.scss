@@ -1,0 +1,88 @@
+@import 'definitions';
+@import 'utilities';
+
+
+.heading {
+  padding-top: 4rem;
+  text-align: center;
+
+  h2 {
+    @include section-heading;
+    @include legibility-shadow;
+    @include dash-under-heading(currentColor);
+  }
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding-bottom: 4rem;
+
+}
+
+.token-card {
+  flex: 0 0 $card-width;
+
+  margin: 15px;
+  padding: 2rem 0 3rem;
+  border-radius: $border-radius;
+
+  color: $color-text-black;
+  background-color: $color-text-white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
+
+  h3 {
+    margin-top: 0;
+
+    text-transform: uppercase;
+    font: {
+      family: $typeface-head;
+      weight: 700;
+    }
+
+    + span {
+      color: $color-text-lightest;
+    }
+  }
+}
+
+.claim-status-container {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 2rem;
+
+  figure {
+    flex: 0 0 50%;
+
+    margin: 0.5rem 0 0;
+
+    text-align: center;
+
+    &:first-of-type {
+      @include container-line-divider('vertical', $color-pale-line-black);
+    }
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  figcaption {
+    margin-top: 0.25rem;
+    color: $color-text-lightest;
+
+    font: {
+      family: $typeface-head;
+      weight: 500;
+    }
+  }
+
+  span {
+    @include display-current-value;
+  }
+}

@@ -1,0 +1,24 @@
+@import 'definitions';
+
+// CloseButton
+.close {
+  background-color: inherit;
+  border: none;
+  border-radius: inherit;
+  padding: 1em;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  height: $input-height;
+  width: $input-height;
+
+  color: $color-text-lightest;
+
+  transition: color 0.15s;
+
+  &:hover {
+    color: $color-text-black;
+  }
+}
