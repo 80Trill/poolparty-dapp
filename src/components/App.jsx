@@ -425,6 +425,7 @@ class App extends React.Component {
      * Generate a list of all pools associated with the PoolParty instance.
      */
     generatePoolAddressList() {
+        var _this = this;
         function createPromises(length, getAddress) {
             let i = 0;
             let addresses = [];
@@ -444,6 +445,8 @@ class App extends React.Component {
                 console.error(err);
             }
         });
+
+        setTimeout(function(){_this.generatePoolAddressList();}, 5000);
     }
 
     /**

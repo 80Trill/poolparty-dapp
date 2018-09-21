@@ -4,7 +4,7 @@
   "description": "",
   "author": "Jessica Marcus <jessica.marcus@gmail.com>",
   "private": true,
-  "homepage": "https://80Trill.github.io/poolparty-dapp",
+  "homepage": "https://80Trill.github.io/poolparty-dapp/",
   "scripts": {
     "test": "jest --watch",
     "build": "webpack --mode production",

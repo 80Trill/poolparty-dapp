@@ -21,10 +21,13 @@ function PoolInformation(props) {
             closeTimeoutMS={300}
         >
             <div className={styles['pool-information']}>
-                <p>Your Pool will be created with the following information:</p>
 
-                <p><strong>ID</strong> {props.values.id}</p>
+                <p>Before accessing your Pool the transaction must be approved by the network.</p>
                 <p><strong>TxHash</strong> <a href={`${blockchainPartialUrl}${props.values.txHash}`}>{props.values.txHash}</a></p>
+
+                <p>After the transaction resolves, your Pool can be accessed with the following ID.</p>
+                <p><strong>ID</strong> {props.values.id}</p>
+
             </div>
 
             <Button
